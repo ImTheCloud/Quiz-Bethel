@@ -1,0 +1,184 @@
+{
+  "quiz": [
+    {
+      "question": "Cine a fost tatăl lui Isus? Matei 1:16",
+      "options": [
+        "Iosif",
+        "Moise",
+        "Avraam",
+        "David"
+      ],
+      "answer": "Iosif"
+    },
+    {
+      "question": "Unde s-a născut Isus conform Evangheliei după Matei? Matei 2:1",
+      "options": [
+        "Bethlehem",
+        "Ierusalim",
+        "Nazaret",
+        "Egipt"
+      ],
+      "answer": "Bethlehem"
+    },
+    {
+      "question": "Câte fericiri sunt enumerate în Matei 5:3-11? Matei 5:3-10",
+      "options": [
+        "8",
+        "10",
+        "7",
+        "12"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "Cine a fost împăratul care a ordonat uciderea copiilor în încercarea de a-l ucide pe Isus? Matei 2:16",
+      "options": [
+        "Irod",
+        "Cezar Augustus",
+        "Pilat",
+        "Irod Antipa"
+      ],
+      "answer": "Irod"
+    },
+    {
+      "question": "Ce mesaj important a rostit Isus în Matei 28:18-20?",
+      "options": [
+        "Marele Porunca",
+        "Fericirile",
+        "Marea Trimitere",
+        "Noul Legământ"
+      ],
+      "answer": "Marea Trimitere"
+    },
+    {
+      "question": "Care este numele muntelui pe care Isus a ținut predicarea Cuvântului în Matei 5? ",
+      "options": [
+        "Muntele Nebo",
+        "Muntele Sinai",
+        "Muntele Tabor",
+        "Muntele Fericirilor"
+      ],
+      "answer": "Muntele Fericirilor"
+    },
+    {
+      "question": "Cine a fost primul ucenic chemat de Isus conform Evangheliei după Matei? Matei 4:18-19",
+      "options": [
+        "Simon Petru",
+        "Andrei",
+        "Iacov, fiul lui Zebedeu",
+        "Toma"
+      ],
+      "answer": "Andrei"
+    },
+    {
+      "question": "Ce a spus Isus în legătură cu a doua mare poruncă? Matei 22:39",
+      "options": [
+        "Iubește-ți aproapele ca pe tine însuți",
+        "Cinstește-ți tatăl și mama",
+        "Nu ucide",
+        "Nu fura"
+      ],
+      "answer": "Iubește-ți aproapele ca pe tine însuți"
+    },
+    {
+      "question": "Care dintre cei doisprezece apostoli ai lui Isus este cunoscut ca 'Tăgăduitorul' în Matei 26:69-75?",
+      "options": [
+        "Petru",
+        "Ioan",
+        "Iacov",
+        "Toma"
+      ],
+      "answer": "Petru"
+    },
+    {
+      "question": "Cine a fost vindecat de orbire de către Isus în Matei 9:27-31?",
+      "options": [
+        "Bartimeu",
+        "Zacheu",
+        "Iacov",
+        "Lazar"
+      ],
+      "answer": "Bartimeu"
+    },
+    {
+      "question": "Ce a spus Isus atunci când a fost ispitit de Diavol în pustie? Matei 4:4",
+      "options": [
+        "Omul nu trăiește doar cu pâine",
+        "Nu ispiți pe Domnul Dumnezeul vostru",
+        "Nimeni nu poate sluji la doi stăpâni",
+        "Iubește-ți aproapele ca pe tine însuți"
+      ],
+      "answer": "Omul nu trăiește doar cu pâine"
+    },
+    {
+      "question": "Cine a adus daruri lui Isus la nașterea Sa, conform Matei 2?",
+      "options": [
+        "Magii din Răsărit",
+        "Preoții evrei",
+        "Îngerii",
+        "Păstori"
+      ],
+      "answer": "Magii din Răsărit"
+    },
+    {
+      "question": "În Matei 7:24-27, cu ce este asemănat omul înțelept care a construit casa sa pe stâncă?",
+      "options": [
+        "Cu un om bogat",
+        "Cu un om înțelept",
+        "Cu un om sărac",
+        "Cu un om obișnuit"
+      ],
+      "answer": "Cu un om înțelept"
+    },
+    {
+      "question": "Ce pildă a dat Isus în Matei 13:45-46 pentru a ilustra prețul Împărăției cerurilor?",
+      "options": [
+        "Comoara ascunsă în câmp",
+        "Mărgăritarele prețioase",
+        "Talantul de aur",
+        "Pilda celor zece fecioare"
+      ],
+      "answer": "Mărgăritarele prețioase"
+    },
+    {
+      "question": "Cine L-a vândut pe Isus pentru 30 de arginți conform Matei 26:14-16?",
+      "options": [
+        "Iuda Iscarioteanul",
+        "Pilat",
+        "Irod Antipa",
+        "Bartolomeu"
+      ],
+      "answer": "Iuda Iscarioteanul"
+    },
+    {
+      "question": "În Matei 8:23-27, cum s-a manifestat puterea lui Isus în timpul furtunii pe mare?",
+      "options": [
+        "El a calmant furtuna",
+        "El a făcut ca vântul să bată cu putere",
+        "El a strigat la ucenici să se roage",
+        "El a dormit liniștit"
+      ],
+      "answer": "El a calmant furtuna"
+    },
+    {
+      "question": "Cine a spus cuvintele 'Făcuti-se voia Ta' în rugăciunea Tatăl Nostru, conform lui Matei 6:10?",
+      "options": [
+        "Isus",
+        "Apostolii",
+        "Moaștele",
+        "Îngerii"
+      ],
+      "answer": "Isus"
+    },
+    {
+      "question": "Cine i-a spus lui Isus 'Fericit este pântecele care te-a purtat şi sânii care te-au alăptat' în Matei 11:27-28?",
+      "options": [
+        "Maria",
+        "Elisabeta",
+        "Ana",
+        "Ioan Botezătorul"
+      ],
+      "answer": "Una din femeile care L-au ascultat pe Isus"
+    }
+  ]
+}
