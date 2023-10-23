@@ -1,0 +1,54 @@
+{
+  "quiz": [
+    {
+      "question": "Cine a fost autorul cărții Luca?",
+      "options": [
+        "Luca",
+        "Matei",
+        "Marcu",
+        "Ioan"
+      ],
+      "answer": "Luca"
+    },
+    {
+      "question": "Ce profesiune avea Luca înainte de a deveni un evanghelist?",
+      "options": [
+        "Medic",
+        "Pescar",
+        "Zugrav",
+        "Ferar"
+      ],
+      "answer": "Medic"
+    },
+    {
+      "question": "Cine era soția lui Zaharia, mama lui Ioan Botezătorul?",
+      "options": [
+        "Elisabeta",
+        "Maria",
+        "Ana",
+        "Rahela"
+      ],
+      "answer": "Elisabeta"
+    },
+    {
+      "question": "Unde s-a născut Isus conform Evangheliei după Luca?",
+      "options": [
+        "Bethlehem",
+        "Nazaret",
+        "Ierusalim",
+        "Egipt"
+      ],
+      "answer": "Bethlehem"
+    },
+    {
+      "question": "Ce mesaj a primit Maria de la îngerul Gavriil în Evanghelia după Luca?",
+      "options": [
+        "Va naște un fiu și îi va pune numele Isus",
+        "Va deveni regina Israelului",
+        "Va călători în Egipt",
+        "Va călători în Nazaret"
+      ],
+      "answer": "Va naște un fiu și îi va pune numele Isus"
+    }
+  ]
+}

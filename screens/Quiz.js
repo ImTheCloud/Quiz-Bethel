@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { Alert } from 'react-native';
-import quizData from '../quizMatei.json';
+import { useRoute } from '@react-navigation/native';
 
 function shuffleArray(array) {
     const shuffledArray = array.slice();
@@ -13,7 +12,7 @@ function shuffleArray(array) {
     return shuffledArray;
 }
 
-const Quiz = () => {
+const Quiz = ({ navigation }) => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
@@ -22,70 +21,8 @@ const Quiz = () => {
     const [isRunning, setIsRunning] = useState(true);
     const [lives, setLives] = useState(3);
     const [shuffledQuestions, setShuffledQuestions] = useState([]);
-    const [selectedQuiz, setSelectedQuiz] = useState(null);
-
-    const renderBackToSelectionButton = () => {
-        if (selectedQuiz !== null) {
-            return (
-                <TouchableOpacity style={styles.homeButton} onPress={() => backToQuizSelection()}>
-                    <Ionicons name="md-arrow-back" size={24} color="white" />
-                </TouchableOpacity>
-            );
-        }
-        return null;
-    };
-
-    const backToQuizSelection = () => {
-        setSelectedQuiz(null);
-        resetGame();
-    };
-
-    const renderQuizSelection = () => {
-        if (selectedQuiz === null) {
-            return (
-                <View style={styles.quizSelectionContainer}>
-                    <Text style={styles.quizSelectionTitle}>Choose a Quiz:</Text>
-                    <TouchableOpacity style={styles.quizButton} onPress={() => startQuiz('quizMatei')}>
-                        <Text style={styles.quizButtonText}>Matei</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.quizButton} onPress={() => startQuiz('quizMarcu')}>
-                        <Text style={styles.quizButtonText}>Marcu</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.quizButton} onPress={() => startQuiz('quizLuca')}>
-                        <Text style={styles.quizButtonText}>Luca</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.quizButton} onPress={() => startQuiz('quizIoan')}>
-                        <Text style={styles.quizButtonText}>Ioan</Text>
-                    </TouchableOpacity>
-                </View>
-            );
-        }
-        return null;
-    };
-
-    const startQuiz = (quizType) => {
-        let quizData;
-        switch (quizType) {
-            case 'quizMatei':
-                quizData = require('../quizMatei.json');
-                break;
-            case 'quizMarcu':
-                quizData = require('../quizMarcu.json');
-                break;
-            case 'quizLuca':
-                quizData = require('../quizLuca.json');
-                break;
-            case 'quizIoan':
-                quizData = require('../quizIoan.json');
-                break;
-            default:
-                quizData = require('../quizMatei.json');
-        }
-
-        setSelectedQuiz(quizType);
-        resetGame();
-        setShuffledQuestions(shuffleArray(Object.values(quizData.quiz)));
-    };
+    const route = useRoute();
+    const { quizData } = route.params;
 
     useEffect(() => {
         if (quizData.quiz) {
@@ -96,11 +33,9 @@ const Quiz = () => {
     useEffect(() => {
         let interval;
 
-        const getCurrentQuestion = () => shuffledQuestions[currentQuestion];
-
         if (timer > 0 && isRunning) {
             interval = setInterval(() => {
-                setTimer(prevTimer => prevTimer - 1);
+                setTimer((prevTimer) => prevTimer - 1);
             }, 1000);
         } else if (timer === 0) {
             handleTimeUp();
@@ -143,7 +78,7 @@ const Quiz = () => {
                 [
                     {
                         text: 'Close',
-                        onPress: () => backToQuizSelection(),
+                        onPress: () => navigation.navigate('Quiz'),
                     },
                 ],
                 { cancelable: false }
@@ -208,12 +143,12 @@ const Quiz = () => {
     const getButtonColor = (option, correctAnswer) => {
         if (selectedOption !== null) {
             return option === correctAnswer
-                ? 'rgba(76,175,80,0.54)'
+                ? 'rgba(76, 175, 80, 0.54)'
                 : option === selectedOption
-                    ? 'rgba(229,115,115,0.62)'
-                    : 'rgb(44,44,44)';
+                    ? 'rgba(229, 115, 115, 0.62)'
+                    : 'rgb(44, 44, 44)';
         } else {
-            return 'rgb(44,44,44)';
+            return 'rgb(44, 44, 44)';
         }
     };
 
@@ -223,9 +158,7 @@ const Quiz = () => {
             const correctAnswer = currentQuestion.answer || '';
             return (
                 <View>
-                    <Text style={styles.correctAnswer}>
-                        Correct Answer: {correctAnswer}
-                    </Text>
+                    <Text style={styles.correctAnswer}>Correct Answer: {correctAnswer}</Text>
                     <Text style={styles.scoreText}>Score: {score}</Text>
                     <View style={{ flexDirection: 'row' }}>
                         <Text style={styles.scoreText}>Lives: </Text>
@@ -249,47 +182,28 @@ const Quiz = () => {
     };
 
     return (
-        <ImageBackground
-            source={require('../assets/background.jpg')}
-            style={styles.background}
-        >
+        <ImageBackground source={require('../assets/background.jpg')} style={styles.background}>
             <View style={styles.container}>
-                {renderBackToSelectionButton()}
-                {renderQuizSelection()}
-                {selectedQuiz !== null && (
-                    <>
-                        <View style={styles.timer}>
-                            <Text style={styles.timerText}>{timer}</Text>
-                        </View>
-                        <Text style={styles.scoreText}>Score {score}</Text>
-                        <View style={{ flexDirection: 'row', marginBottom: 10 }}>
-                            <Text style={styles.scoreText}></Text>
-                            {renderHearts()}
-                        </View>
-                        <Text style={styles.questionText}>{getCurrentQuestion().question}</Text>
-                        {renderOptions()}
-                        {renderNextButton()}
-                        {renderCorrectAnswer()}
-                    </>
-                )}
+                <>
+                    <View style={styles.timer}>
+                        <Text style={styles.timerText}>{timer}</Text>
+                    </View>
+                    <Text style={styles.scoreText}>Score {score}</Text>
+                    <View style={{ flexDirection: 'row', marginBottom: 10 }}>
+                        <Text style={styles.scoreText}></Text>
+                        {renderHearts()}
+                    </View>
+                    <Text style={styles.questionText}>{getCurrentQuestion().question}</Text>
+                    {renderOptions()}
+                    {renderNextButton()}
+                    {renderCorrectAnswer()}
+                </>
             </View>
         </ImageBackground>
     );
 };
 
 const styles = StyleSheet.create({
-
-    quizSelectionContainer: {
-        width: '120%',
-        alignItems: 'center',
-        marginTop: 50,
-    },
-    quizSelectionTitle: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 20,
-        color: 'white',
-    },
     quizButton: {
         marginTop: 10,
         width: '70%',
@@ -303,12 +217,6 @@ const styles = StyleSheet.create({
         elevation: 5,
         marginBottom: 10,
     },
-    quizButtonText: {
-        color: 'white',
-        textAlign: 'center',
-        fontSize: 16,
-    },
-
     background: {
         flex: 1,
         resizeMode: 'cover',
@@ -318,16 +226,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom:100,
+        marginBottom: 100,
         padding: 20,
-    },
-    homeButton: {
-        position: 'absolute',
-        top: 50,
-        left: 20,
-        backgroundColor: 'transparent',
-        padding: 15,
-        borderRadius: 50,
     },
     buttonContainer: {
         marginTop: 10,
@@ -372,17 +272,16 @@ const styles = StyleSheet.create({
         padding: 15,
         borderRadius: 50,
     },
-
     timer: {
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
-        borderRadius: 150, // Adjust the border-radius to half of the desired width/height
-        width: 100, // Set the width and height to create a circle
+        borderRadius: 150,
+        width: 100,
         height: 100,
-        alignItems: 'center', // Center the timer content horizontally
-        justifyContent: 'center', // Center the timer content vertically
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     timerText: {
-        fontSize: 30,  // Increase the font size for the timer
+        fontSize: 30,
         fontWeight: 'bold',
     },
 });
