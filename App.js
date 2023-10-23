@@ -3,6 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './screens/Home';
 import Quiz from './screens/Quiz';
+import Settings from './screens/Settings';
+import Login from './screens/Login';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +22,16 @@ export default function App() {
               component={Quiz}
               options={{ headerShown: false }}
           />
+            <Stack.Screen
+                name="Settings"
+                component={Settings}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="Login"
+                component={Login}
+                options={{ headerShown: false }}
+            />
         </Stack.Navigator>
       </NavigationContainer>
   );

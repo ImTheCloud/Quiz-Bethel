@@ -1,0 +1,196 @@
+{
+  "quiz": [
+    {
+      "question": "Cine a condus poporul Israel în timpul ieșirii din Egipt? (Exod 13:21-22)",
+      "options": [
+        "Moise",
+        "Aaron",
+        "Iosif",
+        "Iosua"
+      ],
+      "answer": "Moise"
+    },
+    {
+      "question": "Ce s-a întâmplat la Marea Roșie? (Exod 14:21-22)",
+      "options": [
+        "A fost dat Decalogul",
+        "Poporul Israel a trecut pe uscat",
+        "A avut loc potopul",
+        "Moise a fost răpit în cer"
+      ],
+      "answer": "Poporul Israel a trecut pe uscat"
+    },
+    {
+      "question": "Ce porunca a dat Dumnezeu în legătură cu Sabatul? (Exod 20:8-10)",
+      "options": [
+        "Să nu muncim în ziua de Sabat",
+        "Să cinstim părinții",
+        "Să nu furi",
+        "Să nu omori"
+      ],
+      "answer": "Să nu muncim în ziua de Sabat"
+    },
+
+    {
+      "question": "Câte zile și nopți a stat Moise pe Muntele Sinai când a primit Legile? (Exod 24:12)",
+      "options": [
+        "3 zile și 3 nopți",
+        "7 zile și 7 nopți",
+        "40 zile și 40 de nopți",
+        "12 zile și 12 nopți"
+      ],
+      "answer": "40 zile și 40 de nopți"
+    },
+    {
+      "question": "Câte tăblițe cu poruncile a dat Dumnezeu lui Moise pe Muntele Sinai? (Exod 24:12)",
+      "options": [
+        "5",
+        "10",
+        "15",
+        "20"
+      ],
+      "answer": "10"
+    },
+    {
+      "question": "Cum a fost învelit Cortul întâlnirii? (Exod 26:1-14)",
+      "options": [
+        "Cu piele de animale",
+        "Cu pânză albă",
+        "Cu aramă",
+        "Cu aur"
+      ],
+      "answer": "Cu pânză albă"
+    },
+        {
+          "question": "Ce fel de păsări trebuiau să ofere israeliții ca jertfă pentru păcat? (Exod 14:7)",
+          "options": [
+            "Porumbel",
+            "Găină",
+            "Porumbac",
+            "Corb"
+          ],
+          "answer": "Porumbac"
+        },
+        {
+          "question": "Câte brațe aveau Candelabrul din aur pur din Cortul Întâlnirii? (Exod 25:32-33)",
+          "options": [
+            "3 brațe",
+            "5 brațe",
+            "7 brațe",
+            "9 brațe"
+          ],
+          "answer": "7 brațe"
+        },
+        {
+          "question": "Cum se numea pâinea sfântă așezată pe Masa de aur din Cortul Întâlnirii? (Exod 25:30)",
+          "options": [
+            "Pâine de aur",
+            "Pâine a vieții",
+            "Pâine a Legământului",
+            "Pâine a Prezenței"
+          ],
+          "answer": "Pâine a Prezenței"
+        },
+        {
+          "question": "Ce materiale a trebuit să aducă poporul Israel pentru a construi Cortul Întâlnirii? (Exod 25:3-7)",
+          "options": [
+            "Lemn de stejar și aur",
+            "Lână și mătase",
+            "Lemn de cedru și argint",
+            "Lână de miel și cupru"
+          ],
+          "answer": "Lemn de cedru și argint"
+        },
+        {
+          "question": "Ce era așezat în Sfânta Sfintelor a Cortului Întâlnirii? (Exod 26:33)",
+          "options": [
+            "Perdea de lână",
+            "Altar de aur",
+            "Cortul exterior",
+            "Chivotul Legământului"
+          ],
+          "answer": "Chivotul Legământului"
+        },
+        {
+          "question": "Ce simbol a folosit Dumnezeu pentru a ghida poporul Israel în timpul nopții în deșert? (Exod 13:21)",
+          "options": [
+            "Stea strălucitoare",
+            "Lumină de foc",
+            "Faruri de la corturi",
+            "Fulger și tunet"
+          ],
+          "answer": "Lumină de foc"
+        },
+        {
+          "question": "Ce a făcut Dumnezeu pentru a hrăni poporul Israel în deșert? (Exod 16:15)",
+          "options": [
+            "A trimis mană din cer",
+            "A transformat pietrele în pâine",
+            "A adus cai și boi pentru sacrificii",
+            "A turnat apă din stâncă"
+          ],
+          "answer": "A trimis mană din cer"
+        },
+        {
+          "question": "Ce eveniment important s-a petrecut la Muntele Sinai? (Exod 19:3-6)",
+          "options": [
+            "Dumnezeu a dat cele zece porunci",
+            "Moise a fost răpit în cer",
+            "S-a născut Moise",
+            "S-a construit Cortul Întâlnirii"
+          ],
+          "answer": "Dumnezeu a dat cele zece porunci"
+        },
+        {
+          "question": "Ce a trebuit să facă poporul Israel în pregătire pentru primirea Legilor la Muntele Sinai? (Exod 19:10-11)",
+          "options": [
+            "Să postească timp de 40 de zile",
+            "Să se spele și să-și spele hainele",
+            "Să aducă jertfe de animale",
+            "Să construiască un altar de aur"
+          ],
+          "answer": "Să se spele și să-și spele hainele"
+        },
+        {
+          "question": "Ce nume avea locul de închinare în Cortul Întâlnirii? (Exod 25:22)",
+          "options": [
+            "Altarul",
+            "Sfânta Sfintelor",
+            "Cortul exterior",
+            "Chivotul Legământului"
+          ],
+          "answer": "Chivotul Legământului"
+        },
+
+        {
+          "question": "Ce porunca a dat Dumnezeu cu privire la idolatrie? (Exod 20:4-5)",
+          "options": [
+            "Să nu fii lăudăros",
+            "Să nu faci chipuri de idoli",
+            "Să nu furi",
+            "Să nu ucizi"
+          ],
+          "answer": "Să nu faci chipuri de idoli"
+        },
+        {
+          "question": "Cine a avut acces în Sfânta Sfintelor a Cortului Întâlnirii? (Exod 26:33)",
+          "options": [
+            "Preoții",
+            "Oamenii obișnuiți",
+            "Nimeni, era interzis accesul",
+            "Doar Moise"
+          ],
+          "answer": "Nimeni, era interzis accesul"
+        },
+        {
+          "question": "Ce a fost așezat pe Masa de aur din Cortul Întâlnirii? (Exod 25:30)",
+          "options": [
+            "Ulei de măsline",
+            "Lângă de grâu",
+            "Bani de aur",
+            "Sarea"
+          ],
+          "answer": "Sarea"
+        }
+  ]
+}

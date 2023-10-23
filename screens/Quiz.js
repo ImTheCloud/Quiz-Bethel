@@ -23,12 +23,17 @@ const Quiz = ({ navigation }) => {
     const [shuffledQuestions, setShuffledQuestions] = useState([]);
     const route = useRoute();
     const { quizData } = route.params;
+    const [quizProgress, setQuizProgress] = useState(0);
+    const [totalQuestions, setTotalQuestions] = useState(0);
 
     useEffect(() => {
         if (quizData.quiz) {
-            setShuffledQuestions(shuffleArray(Object.values(quizData.quiz)));
+            const questions = Object.values(quizData.quiz);
+            setTotalQuestions(questions.length);
+            setShuffledQuestions(shuffleArray(questions));
         }
     }, []);
+
 
     useEffect(() => {
         let interval;
@@ -78,7 +83,7 @@ const Quiz = ({ navigation }) => {
                 [
                     {
                         text: 'Close',
-                        onPress: () => navigation.navigate('Quiz'),
+                        onPress: () =>navigation.navigate('Home'),
                     },
                 ],
                 { cancelable: false }
@@ -110,10 +115,12 @@ const Quiz = ({ navigation }) => {
             setSelectedOption(null);
             resetTimer();
             setIsRunning(true);
+            setQuizProgress(quizProgress + 1); // Mettre à jour le progrès
         } else {
             setShowScore(true);
         }
     };
+
 
     const getCurrentQuestion = () => {
         return shuffledQuestions[currentQuestion] || {};
@@ -152,23 +159,7 @@ const Quiz = ({ navigation }) => {
         }
     };
 
-    const renderCorrectAnswer = () => {
-        if (showScore) {
-            const currentQuestion = getCurrentQuestion();
-            const correctAnswer = currentQuestion.answer || '';
-            return (
-                <View>
-                    <Text style={styles.correctAnswer}>Correct Answer: {correctAnswer}</Text>
-                    <Text style={styles.scoreText}>Score: {score}</Text>
-                    <View style={{ flexDirection: 'row' }}>
-                        <Text style={styles.scoreText}>Lives: </Text>
-                        {renderHearts()}
-                    </View>
-                </View>
-            );
-        }
-        return null;
-    };
+
 
     const renderNextButton = () => {
         if (selectedOption !== null || showScore) {
@@ -180,15 +171,24 @@ const Quiz = ({ navigation }) => {
         }
         return null;
     };
+    const handleBackToHome = () => {
+        navigation.navigate('Home');
+    };
 
     return (
         <ImageBackground source={require('../assets/background.jpg')} style={styles.background}>
             <View style={styles.container}>
+                <TouchableOpacity style={styles.backButton} onPress={handleBackToHome}>
+                    <Ionicons name="md-arrow-back" size={24} color="white" />
+                </TouchableOpacity>
                 <>
                     <View style={styles.timer}>
                         <Text style={styles.timerText}>{timer}</Text>
                     </View>
                     <Text style={styles.scoreText}>Score {score}</Text>
+                    <Text style={styles.scoreText}>
+                        Intrebare {quizProgress + 1} din {totalQuestions} {/* Afficher le progrès et le nombre total de questions */}
+                    </Text>
                     <View style={{ flexDirection: 'row', marginBottom: 10 }}>
                         <Text style={styles.scoreText}></Text>
                         {renderHearts()}
@@ -196,14 +196,22 @@ const Quiz = ({ navigation }) => {
                     <Text style={styles.questionText}>{getCurrentQuestion().question}</Text>
                     {renderOptions()}
                     {renderNextButton()}
-                    {renderCorrectAnswer()}
                 </>
             </View>
+
         </ImageBackground>
     );
 };
 
 const styles = StyleSheet.create({
+    backButton: {
+        position: 'absolute',
+        top: 40,
+        left: 20,
+        backgroundColor: 'rgb(44,44,44)',
+        padding: 10,
+        borderRadius: 40,
+    },
     quizButton: {
         marginTop: 10,
         width: '70%',
@@ -245,6 +253,7 @@ const styles = StyleSheet.create({
         color: 'white',
         textAlign: 'center',
         fontSize: 16,
+        maxHeight: 60,
     },
     scoreText: {
         marginBottom: 10,
@@ -255,7 +264,7 @@ const styles = StyleSheet.create({
     questionText: {
         marginBottom: 20,
         color: 'white',
-        fontSize: 24,
+        fontSize: 18,
         textAlign: 'center',
         fontWeight: 'bold',
     },
