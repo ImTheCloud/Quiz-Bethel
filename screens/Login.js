@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
-    ActivityIndicator,
+    ActivityIndicator, ImageBackground,
     KeyboardAvoidingView,
     Platform,
     ScrollView,
@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import { auth } from '../firebase';
+import background from '../assets/background.jpg';
 
 
 const Login = () => {
@@ -31,9 +32,7 @@ const Login = () => {
             .then(userCredentials => {
                 const user = userCredentials.user;
                 setLoading(false);
-
-
-                navigation.navigate('Login', {screen: 'Home'});
+               navigation.navigate('Home');
             })
             .catch(error => {
                 setError('E-mail address or password not correct');
@@ -42,13 +41,15 @@ const Login = () => {
     };
 
     return (
+        <ImageBackground source={background} style={styles.backgroundImage}>
+
         <ScrollView contentContainerStyle={styles.scrollViewContent}>
             <KeyboardAvoidingView
                 style={styles.container}
                 behavior="padding"
                 keyboardVerticalOffset={Platform.OS === 'ios' ? 40 : 0}
             >
-                <Text style={styles.title}>Multi Game Mobile</Text>
+                <Text style={styles.title}>Quiz</Text>
 
                 <View style={styles.inputContainer}>
                     <Text style={styles.inputLabel}>Email</Text>
@@ -104,10 +105,12 @@ const Login = () => {
                 </View>
             </KeyboardAvoidingView>
         </ScrollView>
+        </ImageBackground>
     );
 };
 
 const styles = StyleSheet.create({
+
     passwordInputContainer: {
         flexDirection: 'row',
         alignItems: 'center',

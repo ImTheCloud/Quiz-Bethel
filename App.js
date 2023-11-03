@@ -5,6 +5,7 @@ import Home from './screens/Home';
 import Quiz from './screens/Quiz';
 import Settings from './screens/Settings';
 import Login from './screens/Login';
+import Register from './screens/Register';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +31,11 @@ export default function App() {
             <Stack.Screen
                 name="Login"
                 component={Login}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="Register"
+                component={Register}
                 options={{ headerShown: false }}
             />
         </Stack.Navigator>
